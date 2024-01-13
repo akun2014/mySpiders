@@ -9,6 +9,15 @@ from scrapy import signals
 from itemadapter import is_item, ItemAdapter
 
 
+def get_cookies():
+    cookies_str = ''
+    cookies = {}
+    for item in cookies_str.split('；'):
+        key, value = item.split('=', maxsplit=1)
+        cookies[key] = value
+    return cookies
+
+
 class MyspiderSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
@@ -78,6 +87,10 @@ class MyspiderDownloaderMiddleware:
         # - or return a Request object
         # - or raise IgnoreRequest: process_exception() methods of
         #   installed downloader middleware will be called
+        request.cookies = {
+
+        }
+        print("set request cookies")
         return None
 
     def process_response(self, request, response, spider):

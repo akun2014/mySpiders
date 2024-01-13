@@ -18,13 +18,23 @@ class MyspiderPipeline:
     def __init__(self):
         myclient = pymongo.MongoClient("mongodb://localhost:27017")
         mydb = myclient["demo"]
-        self.collection = mydb["spider2"]
+        self.collection = mydb["spider3"]
+        self.movie_list = []
+
+    def open_spider(self, spider):
+        pass
+
+    def close_spider(self, spider):
+        self.collection.insert_many(self.movie_list)
 
     def process_item(self, item, spider):
+        valid = True
         for data in item:
             if not data:
+                valid = False
                 raise DropItem("Missing data!")
-            print("data="+data)
-            self.collection.insert_one({"name": data.name})
+        if valid:
+            self.movie_list.append(dict(item))
+            # self.collection.insert_one(dict(item))
         logging.info("hello workd")
         return item
