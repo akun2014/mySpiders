@@ -32,10 +32,6 @@ class DoubanSpider(scrapy.Spider):
     def parse_detail(self, response, **kwargs):
         movie_item = kwargs['movie_item']
         sel = Selector(response)
-        # link-report-intra > span:nth-child(1)
-        # link-report-intra > span.short > span
-        # // *[ @ id = "link-report-intra"] / span[1] / span
-        # / html / body / div[3] / div[1] / div[2] / div[1] / div[3] / div / span[1] / span
-        movie_detail = sel.xpath(' // *[ @ id = "link-report-intra"] / span[1] / span/text()').extract_first()
-        movie_item['movie_detail'] = movie_detail
+        movie_detail = sel.xpath('//span[@property="v:summary"]/text()').extract_first()
+        movie_item['movie_detail'] = movie_detail.strip()
         yield movie_item
