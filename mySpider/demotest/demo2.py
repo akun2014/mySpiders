@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 browser = webdriver.Chrome()
+browser.implicitly_wait(10)
 try:
     browser.get('https://www.baidu.com')
     input = browser.find_element(By.ID, 'kw')

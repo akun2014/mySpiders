@@ -30,7 +30,7 @@ DOWNLOAD_DELAY = 3
 CONCURRENT_REQUESTS_PER_IP = 3
 
 # Disable cookies (enabled by default)
-# COOKIES_ENABLED = False
+COOKIES_ENABLED = True
 
 # Disable Telnet Console (enabled by default)
 TELNETCONSOLE_ENABLED = False
@@ -51,9 +51,10 @@ SPIDER_MIDDLEWARES = {
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    # "mySpider.middlewares.MyspiderDownloaderMiddleware": 100,
+    "mySpider.middlewares.MyspiderDownloaderMiddleware": 100,
     # "mySpider.middlewares.RandomUserAgentDownloaderMiddleware": 200,
-    'mySpider.middlewares.SeleniumMiddleware': 300
+    # 'mySpider.middlewares.CookieProcessMiddleware': 200,
+    # 'mySpider.middlewares.SeleniumMiddleware': 300
 }
 
 # Enable or disable extensions
@@ -65,9 +66,9 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    # "mySpider.pipelines.MyspiderPipeline": 300,
+    "mySpider.pipelines.MyspiderPipeline": 300,
     # "mySpider.pipelines.TmpPipeline": 301
-    'mySpider.pipelines.MongoPipeline': 300
+    # 'mySpider.pipelines.MongoPipeline': 300
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
