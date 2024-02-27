@@ -18,14 +18,17 @@ class MyspiderPipeline:
 
     def __init__(self):
         myclient = pymongo.MongoClient("mongodb://localhost:27017")
-        mydb = myclient["demo"]
-        self.collection = mydb["cyberebee"]
+        self.mydb = myclient["demo"]
+        # self.collection = self.mydb["cyberebee"]
         self.movie_list = []
 
     def open_spider(self, spider):
         pass
 
     def close_spider(self, spider):
+        self.mydb.drop_collection("cyberebee")
+        self.mydb.create_collection("cyberebee")
+        self.collection = self.mydb["cyberebee"]
         self.collection.insert_many(self.movie_list)
 
     def process_item(self, item, spider):
