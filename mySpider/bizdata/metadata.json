@@ -1,0 +1,814 @@
+[
+    {
+        "column_name": "feed_product_type",
+        "idx": 0
+    },
+    {
+        "column_name": "item_sku",
+        "idx": 1
+    },
+    {
+        "column_name": "brand_name",
+        "idx": 2
+    },
+    {
+        "column_name": "external_product_id",
+        "idx": 3
+    },
+    {
+        "column_name": "external_product_id_type",
+        "idx": 4
+    },
+    {
+        "column_name": "item_name",
+        "idx": 5
+    },
+    {
+        "column_name": "manufacturer",
+        "idx": 6
+    },
+    {
+        "column_name": "item_type",
+        "idx": 7
+    },
+    {
+        "column_name": "standard_price",
+        "idx": 8
+    },
+    {
+        "column_name": "quantity",
+        "idx": 9
+    },
+    {
+        "column_name": "main_image_url",
+        "idx": 10
+    },
+    {
+        "column_name": "other_image_url1",
+        "idx": 11
+    },
+    {
+        "column_name": "other_image_url2",
+        "idx": 12
+    },
+    {
+        "column_name": "other_image_url3",
+        "idx": 13
+    },
+    {
+        "column_name": "other_image_url4",
+        "idx": 14
+    },
+    {
+        "column_name": "other_image_url5",
+        "idx": 15
+    },
+    {
+        "column_name": "other_image_url6",
+        "idx": 16
+    },
+    {
+        "column_name": "other_image_url7",
+        "idx": 17
+    },
+    {
+        "column_name": "other_image_url8",
+        "idx": 18
+    },
+    {
+        "column_name": "parent_child",
+        "idx": 19
+    },
+    {
+        "column_name": "parent_sku",
+        "idx": 20
+    },
+    {
+        "column_name": "relationship_type",
+        "idx": 21
+    },
+    {
+        "column_name": "variation_theme",
+        "idx": 22
+    },
+    {
+        "column_name": "package_level",
+        "idx": 23
+    },
+    {
+        "column_name": "package_contains_quantity",
+        "idx": 24
+    },
+    {
+        "column_name": "package_contains_identifier",
+        "idx": 25
+    },
+    {
+        "column_name": "update_delete",
+        "idx": 26
+    },
+    {
+        "column_name": "product_description",
+        "idx": 27
+    },
+    {
+        "column_name": "part_number",
+        "idx": 28
+    },
+    {
+        "column_name": "model",
+        "idx": 29
+    },
+    {
+        "column_name": "language_value1",
+        "idx": 30
+    },
+    {
+        "column_name": "language_value2",
+        "idx": 31
+    },
+    {
+        "column_name": "language_value3",
+        "idx": 32
+    },
+    {
+        "column_name": "language_value4",
+        "idx": 33
+    },
+    {
+        "column_name": "language_value5",
+        "idx": 34
+    },
+    {
+        "column_name": "bullet_point1",
+        "idx": 35
+    },
+    {
+        "column_name": "bullet_point2",
+        "idx": 36
+    },
+    {
+        "column_name": "bullet_point3",
+        "idx": 37
+    },
+    {
+        "column_name": "bullet_point4",
+        "idx": 38
+    },
+    {
+        "column_name": "bullet_point5",
+        "idx": 39
+    },
+    {
+        "column_name": "generic_keywords",
+        "idx": 40
+    },
+    {
+        "column_name": "platinum_keywords1",
+        "idx": 41
+    },
+    {
+        "column_name": "platinum_keywords2",
+        "idx": 42
+    },
+    {
+        "column_name": "platinum_keywords3",
+        "idx": 43
+    },
+    {
+        "column_name": "platinum_keywords4",
+        "idx": 44
+    },
+    {
+        "column_name": "platinum_keywords5",
+        "idx": 45
+    },
+    {
+        "column_name": "special_features",
+        "idx": 46
+    },
+    {
+        "column_name": "color_name",
+        "idx": 47
+    },
+    {
+        "column_name": "color_map",
+        "idx": 48
+    },
+    {
+        "column_name": "size_name",
+        "idx": 49
+    },
+    {
+        "column_name": "power_source_type",
+        "idx": 50
+    },
+    {
+        "column_name": "hardware_platform",
+        "idx": 51
+    },
+    {
+        "column_name": "mfg_warranty_description_labor",
+        "idx": 52
+    },
+    {
+        "column_name": "target_audience_keywords1",
+        "idx": 53
+    },
+    {
+        "column_name": "target_audience_keywords2",
+        "idx": 54
+    },
+    {
+        "column_name": "target_audience_keywords3",
+        "idx": 55
+    },
+    {
+        "column_name": "target_audience_keywords4",
+        "idx": 56
+    },
+    {
+        "column_name": "target_audience_keywords5",
+        "idx": 57
+    },
+    {
+        "column_name": "thesaurus_attribute_keywords1",
+        "idx": 58
+    },
+    {
+        "column_name": "thesaurus_attribute_keywords2",
+        "idx": 59
+    },
+    {
+        "column_name": "thesaurus_attribute_keywords3",
+        "idx": 60
+    },
+    {
+        "column_name": "thesaurus_attribute_keywords4",
+        "idx": 61
+    },
+    {
+        "column_name": "thesaurus_attribute_keywords5",
+        "idx": 62
+    },
+    {
+        "column_name": "specific_uses_keywords1",
+        "idx": 63
+    },
+    {
+        "column_name": "specific_uses_keywords2",
+        "idx": 64
+    },
+    {
+        "column_name": "specific_uses_keywords3",
+        "idx": 65
+    },
+    {
+        "column_name": "specific_uses_keywords4",
+        "idx": 66
+    },
+    {
+        "column_name": "specific_uses_keywords5",
+        "idx": 67
+    },
+    {
+        "column_name": "thesaurus_subject_keywords1",
+        "idx": 68
+    },
+    {
+        "column_name": "thesaurus_subject_keywords2",
+        "idx": 69
+    },
+    {
+        "column_name": "thesaurus_subject_keywords3",
+        "idx": 70
+    },
+    {
+        "column_name": "thesaurus_subject_keywords4",
+        "idx": 71
+    },
+    {
+        "column_name": "thesaurus_subject_keywords5",
+        "idx": 72
+    },
+    {
+        "column_name": "shaft_style_type",
+        "idx": 73
+    },
+    {
+        "column_name": "connector_gender1",
+        "idx": 74
+    },
+    {
+        "column_name": "connector_gender2",
+        "idx": 75
+    },
+    {
+        "column_name": "connector_gender3",
+        "idx": 76
+    },
+    {
+        "column_name": "connector_gender4",
+        "idx": 77
+    },
+    {
+        "column_name": "connector_gender5",
+        "idx": 78
+    },
+    {
+        "column_name": "item_height",
+        "idx": 79
+    },
+    {
+        "column_name": "item_length",
+        "idx": 80
+    },
+    {
+        "column_name": "item_width",
+        "idx": 81
+    },
+    {
+        "column_name": "item_dimensions_unit_of_measure",
+        "idx": 82
+    },
+    {
+        "column_name": "website_shipping_weight",
+        "idx": 83
+    },
+    {
+        "column_name": "website_shipping_weight_unit_of_measure",
+        "idx": 84
+    },
+    {
+        "column_name": "maximum_weight_recommendation_unit_of_measure",
+        "idx": 85
+    },
+    {
+        "column_name": "size_map",
+        "idx": 86
+    },
+    {
+        "column_name": "fulfillment_center_id",
+        "idx": 87
+    },
+    {
+        "column_name": "package_height",
+        "idx": 88
+    },
+    {
+        "column_name": "package_width",
+        "idx": 89
+    },
+    {
+        "column_name": "package_length",
+        "idx": 90
+    },
+    {
+        "column_name": "package_dimensions_unit_of_measure",
+        "idx": 91
+    },
+    {
+        "column_name": "package_weight",
+        "idx": 92
+    },
+    {
+        "column_name": "package_weight_unit_of_measure",
+        "idx": 93
+    },
+    {
+        "column_name": "package_height_unit_of_measure",
+        "idx": 94
+    },
+    {
+        "column_name": "package_width_unit_of_measure",
+        "idx": 95
+    },
+    {
+        "column_name": "energy_efficiency_image_url",
+        "idx": 96
+    },
+    {
+        "column_name": "country_of_origin",
+        "idx": 97
+    },
+    {
+        "column_name": "seller_warranty_description",
+        "idx": 98
+    },
+    {
+        "column_name": "fabric_type",
+        "idx": 99
+    },
+    {
+        "column_name": "import_designation",
+        "idx": 100
+    },
+    {
+        "column_name": "battery_cell_composition",
+        "idx": 101
+    },
+    {
+        "column_name": "battery_type1",
+        "idx": 102
+    },
+    {
+        "column_name": "battery_type2",
+        "idx": 103
+    },
+    {
+        "column_name": "battery_type3",
+        "idx": 104
+    },
+    {
+        "column_name": "lithium_battery_energy_content",
+        "idx": 105
+    },
+    {
+        "column_name": "lithium_battery_packaging",
+        "idx": 106
+    },
+    {
+        "column_name": "number_of_batteries1",
+        "idx": 107
+    },
+    {
+        "column_name": "number_of_batteries2",
+        "idx": 108
+    },
+    {
+        "column_name": "number_of_batteries3",
+        "idx": 109
+    },
+    {
+        "column_name": "are_batteries_included",
+        "idx": 110
+    },
+    {
+        "column_name": "legal_disclaimer_description",
+        "idx": 111
+    },
+    {
+        "column_name": "safety_warning",
+        "idx": 112
+    },
+    {
+        "column_name": "item_weight",
+        "idx": 113
+    },
+    {
+        "column_name": "item_weight_unit_of_measure",
+        "idx": 114
+    },
+    {
+        "column_name": "cpsia_cautionary_statement",
+        "idx": 115
+    },
+    {
+        "column_name": "cpsia_cautionary_description",
+        "idx": 116
+    },
+    {
+        "column_name": "mfg_warranty_description_type",
+        "idx": 117
+    },
+    {
+        "column_name": "batteries_required",
+        "idx": 118
+    },
+    {
+        "column_name": "battery_weight",
+        "idx": 119
+    },
+    {
+        "column_name": "battery_weight_unit_of_measure",
+        "idx": 120
+    },
+    {
+        "column_name": "number_of_lithium_metal_cells",
+        "idx": 121
+    },
+    {
+        "column_name": "number_of_lithium_ion_cells",
+        "idx": 122
+    },
+    {
+        "column_name": "lithium_battery_energy_content_unit_of_measure",
+        "idx": 123
+    },
+    {
+        "column_name": "lithium_battery_weight",
+        "idx": 124
+    },
+    {
+        "column_name": "lithium_battery_weight_unit_of_measure",
+        "idx": 125
+    },
+    {
+        "column_name": "supplier_declared_dg_hz_regulation1",
+        "idx": 126
+    },
+    {
+        "column_name": "supplier_declared_dg_hz_regulation2",
+        "idx": 127
+    },
+    {
+        "column_name": "supplier_declared_dg_hz_regulation3",
+        "idx": 128
+    },
+    {
+        "column_name": "supplier_declared_dg_hz_regulation4",
+        "idx": 129
+    },
+    {
+        "column_name": "supplier_declared_dg_hz_regulation5",
+        "idx": 130
+    },
+    {
+        "column_name": "hazmat_united_nations_regulatory_id",
+        "idx": 131
+    },
+    {
+        "column_name": "safety_data_sheet_url",
+        "idx": 132
+    },
+    {
+        "column_name": "item_volume",
+        "idx": 133
+    },
+    {
+        "column_name": "item_volume_unit_of_measure",
+        "idx": 134
+    },
+    {
+        "column_name": "legal_compliance_certification_status",
+        "idx": 135
+    },
+    {
+        "column_name": "flash_point",
+        "idx": 136
+    },
+    {
+        "column_name": "legal_compliance_certification_date_of_issue",
+        "idx": 137
+    },
+    {
+        "column_name": "legal_compliance_certification_metadata",
+        "idx": 138
+    },
+    {
+        "column_name": "legal_compliance_certification_expiration_date",
+        "idx": 139
+    },
+    {
+        "column_name": "legal_compliance_certification_regulatory_organization_name",
+        "idx": 140
+    },
+    {
+        "column_name": "warranty_description",
+        "idx": 141
+    },
+    {
+        "column_name": "legal_compliance_certification_value",
+        "idx": 142
+    },
+    {
+        "column_name": "ghs_classification_class1",
+        "idx": 143
+    },
+    {
+        "column_name": "ghs_classification_class2",
+        "idx": 144
+    },
+    {
+        "column_name": "ghs_classification_class3",
+        "idx": 145
+    },
+    {
+        "column_name": "california_proposition_65_compliance_type",
+        "idx": 146
+    },
+    {
+        "column_name": "california_proposition_65_chemical_names1",
+        "idx": 147
+    },
+    {
+        "column_name": "california_proposition_65_chemical_names2",
+        "idx": 148
+    },
+    {
+        "column_name": "california_proposition_65_chemical_names3",
+        "idx": 149
+    },
+    {
+        "column_name": "california_proposition_65_chemical_names4",
+        "idx": 150
+    },
+    {
+        "column_name": "california_proposition_65_chemical_names5",
+        "idx": 151
+    },
+    {
+        "column_name": "pesticide_marking_type1",
+        "idx": 152
+    },
+    {
+        "column_name": "pesticide_marking_type2",
+        "idx": 153
+    },
+    {
+        "column_name": "pesticide_marking_type3",
+        "idx": 154
+    },
+    {
+        "column_name": "pesticide_marking_registration_status1",
+        "idx": 155
+    },
+    {
+        "column_name": "pesticide_marking_registration_status2",
+        "idx": 156
+    },
+    {
+        "column_name": "pesticide_marking_registration_status3",
+        "idx": 157
+    },
+    {
+        "column_name": "pesticide_marking_certification_number1",
+        "idx": 158
+    },
+    {
+        "column_name": "pesticide_marking_certification_number2",
+        "idx": 159
+    },
+    {
+        "column_name": "pesticide_marking_certification_number3",
+        "idx": 160
+    },
+    {
+        "column_name": "merchant_shipping_group_name",
+        "idx": 161
+    },
+    {
+        "column_name": "product_tax_code",
+        "idx": 162
+    },
+    {
+        "column_name": "list_price",
+        "idx": 163
+    },
+    {
+        "column_name": "map_price",
+        "idx": 164
+    },
+    {
+        "column_name": "max_order_quantity",
+        "idx": 165
+    },
+    {
+        "column_name": "fulfillment_latency",
+        "idx": 166
+    },
+    {
+        "column_name": "condition_type",
+        "idx": 167
+    },
+    {
+        "column_name": "condition_note",
+        "idx": 168
+    },
+    {
+        "column_name": "sale_price",
+        "idx": 169
+    },
+    {
+        "column_name": "sale_from_date",
+        "idx": 170
+    },
+    {
+        "column_name": "sale_end_date",
+        "idx": 171
+    },
+    {
+        "column_name": "max_aggregate_ship_quantity",
+        "idx": 172
+    },
+    {
+        "column_name": "offering_can_be_gift_messaged",
+        "idx": 173
+    },
+    {
+        "column_name": "offering_can_be_giftwrapped",
+        "idx": 174
+    },
+    {
+        "column_name": "product_site_launch_date",
+        "idx": 175
+    },
+    {
+        "column_name": "merchant_release_date",
+        "idx": 176
+    },
+    {
+        "column_name": "restock_date",
+        "idx": 177
+    },
+    {
+        "column_name": "is_discontinued_by_manufacturer",
+        "idx": 178
+    },
+    {
+        "column_name": "offering_end_date",
+        "idx": 179
+    },
+    {
+        "column_name": "offering_start_date",
+        "idx": 180
+    },
+    {
+        "column_name": "business_price",
+        "idx": 181
+    },
+    {
+        "column_name": "quantity_price_type",
+        "idx": 182
+    },
+    {
+        "column_name": "quantity_lower_bound1",
+        "idx": 183
+    },
+    {
+        "column_name": "quantity_price1",
+        "idx": 184
+    },
+    {
+        "column_name": "quantity_lower_bound2",
+        "idx": 185
+    },
+    {
+        "column_name": "quantity_price2",
+        "idx": 186
+    },
+    {
+        "column_name": "quantity_lower_bound3",
+        "idx": 187
+    },
+    {
+        "column_name": "quantity_price3",
+        "idx": 188
+    },
+    {
+        "column_name": "quantity_lower_bound4",
+        "idx": 189
+    },
+    {
+        "column_name": "quantity_price4",
+        "idx": 190
+    },
+    {
+        "column_name": "quantity_lower_bound5",
+        "idx": 191
+    },
+    {
+        "column_name": "quantity_price5",
+        "idx": 192
+    },
+    {
+        "column_name": "progressive_discount_type",
+        "idx": 193
+    },
+    {
+        "column_name": "national_stock_number",
+        "idx": 194
+    },
+    {
+        "column_name": "unspsc_code",
+        "idx": 195
+    },
+    {
+        "column_name": "progressive_discount_lower_bound1",
+        "idx": 196
+    },
+    {
+        "column_name": "progressive_discount_value1",
+        "idx": 197
+    },
+    {
+        "column_name": "pricing_action",
+        "idx": 198
+    },
+    {
+        "column_name": "progressive_discount_lower_bound2",
+        "idx": 199
+    },
+    {
+        "column_name": "progressive_discount_value2",
+        "idx": 200
+    },
+    {
+        "column_name": "progressive_discount_lower_bound3",
+        "idx": 201
+    },
+    {
+        "column_name": "progressive_discount_value3",
+        "idx": 202
+    }
+]
