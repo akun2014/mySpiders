@@ -5,13 +5,15 @@
 
 
 # useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
+
+import logging
 
 import pymongo
-import logging
 import pymysql
-
 from scrapy.exceptions import DropItem
+
+from mySpider.db_dao.db_handle import get_collection
+from mySpider.items import ProductionItem, CategoriesItem
 
 
 class MyspiderPipeline:
@@ -20,26 +22,38 @@ class MyspiderPipeline:
         myclient = pymongo.MongoClient("mongodb://localhost:27017")
         self.mydb = myclient["demo"]
         # self.collection = self.mydb["cyberebee"]
-        self.movie_list = []
+        self.item_list = []
 
     def open_spider(self, spider):
         pass
 
     def close_spider(self, spider):
-        self.mydb.drop_collection("cyberebee")
-        self.mydb.create_collection("cyberebee")
+        # self.mydb.drop_collection("cyberebee")
+        # self.mydb.create_collection("cyberebee")
         self.collection = self.mydb["cyberebee"]
-        self.collection.insert_many(self.movie_list)
+        if self.item_list:
+            print("item_list=====", self.item_list)
+            self.collection.insert_many(self.item_list)
 
     def process_item(self, item, spider):
-        valid = True
-        for data in item:
-            if not data:
-                valid = False
+        print("process_item=====", type(item))
+
+        col = get_collection('demo', item.collection)
+        if isinstance(item, ProductionItem):
+            print("process_item2=====", item)
+            if not item:
                 raise DropItem("Missing data!")
-        if valid:
-            self.movie_list.append(dict(item))
-            # self.collection.insert_one(dict(item))
+            if item:
+                result = col.find_one({'status': 'NEW', 'source_item_id': item['source_item_id']})
+                if result:
+                    # 更新MongoDB数据
+                    print("更新MongoDB数据2")
+                    col.update_one({'source_item_id': item['source_item_id']},
+                                   {'$set': dict(item)})
+                else:
+                    col.insert_one(dict(item))
+        if isinstance(item, CategoriesItem):
+            col.insert_one(dict(item))
         logging.info("hello workd")
         return item
 

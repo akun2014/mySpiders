@@ -6,12 +6,18 @@ myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 mydb = myclient["demo"]
 mycol = mydb["spider2"]
 
-x = mycol.find_one()
+# mycol.insert_one({"name": "guikun"})
+a =  mycol.find({"name": "guikun"})
 
-print(x)
+print(a.limit(1))
 
-mycol.insert_one({"name": "guikun"})
 
-x = mycol.find_one()
-
-print(x)
+# x = mycol.find_one()
+#
+# # print(x)
+#
+# # mycol.insert_one({"name": "guikun"})
+#
+# x = mycol.find_one()
+#
+# print(x)

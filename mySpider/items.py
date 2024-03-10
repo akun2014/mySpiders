@@ -42,3 +42,63 @@ class ProductItem(Item):
     Specification = Field()
     package_includes = Field()
     details_pictures = Field()
+
+
+class CategoriesItem(Item):
+    collection = 'categories'
+    url = Field()
+    type = Field()
+
+
+class ProductionItem(Item):
+    collection = 'cyberebee'
+    #############通用字段###################
+    target = 'YMX'
+    # 商品来源
+    source_type = Field()
+    source_item_id = Field()
+    source_item_url = Field()
+    source_item_sku = Field()
+    source_item_name = Field()
+    source_item_url_hash = Field()
+    gmt_create = Field()
+    gmt_modified = Field()
+    status = Field()
+    #############通用字段###################
+    feed_product_type = Field()
+    item_sku = Field()
+    # IKEN
+    brand_name = Field()
+    external_product_id = Field()
+    external_product_id_type = Field()
+    # 标题
+    item_name = Field()
+    # IKEN
+    manufacturer = Field()
+    item_type = Field()
+    standard_price = Field()
+    quantity = Field()
+    main_image_url = Field()
+    other_image_url1 = Field()
+    other_image_url2 = Field()
+    other_image_url3 = Field()
+    other_image_url4 = Field()
+    other_image_url5 = Field()
+    other_image_url6 = Field()
+    other_image_url7 = Field()
+    other_image_url8 = Field()
+    update_delete = Field()
+    product_description = Field()
+    bullet_point1 = Field()
+    bullet_point2 = Field()
+    bullet_point3 = Field()
+    bullet_point4 = Field()
+    bullet_point5 = Field()
+    package_height = Field()
+    package_width = Field()
+    package_length = Field()
+    package_dimensions_unit_of_measure = Field()
+    package_weight = Field()
+    package_weight_unit_of_measure = Field()
+    #############冗余字段###################
+    features = Field()

@@ -1,9 +1,13 @@
+from datetime import datetime
+from typing import Any
+
 import scrapy
 from lxml import etree
 from scrapy import Selector, Request
+from scrapy.http import Response
 
-from mySpider.items import ProductItem
-
+from mySpider.db_dao.db_handle import get_collection
+from mySpider.items import ProductionItem
 
 
 def get_features(elms, title, others):
@@ -58,46 +62,42 @@ def get_features(elms, title, others):
                     features.append(e.strip())
     return features
 
+
 class Cyberebee2Spider(scrapy.Spider):
     name = "cyberebee2"
     allowed_domains = ["www.cyberebee.com"]
-    start_urls = ['https://www.cyberebee.com/Tools-Excipients/Hand-Tool?limit=50']
 
-    def parse(self, response, **kwargs):
+    # start_urls = ['https://www.cyberebee.com/Tools-Excipients/Hand-Tool?limit=50']
+
+    def start_requests(self):
+        col = get_collection('demo', 'cyberebee')
+        cols = col.find({'status': 'NEW'})
+        for col in cols:
+            print("col=", col)
+            yield Request(url=col['source_item_url'], callback=self.parse, cb_kwargs={'col': col})
+
+    def parse(self, response: Response, **kwargs: Any):
+        col = kwargs['col']
+        product = ProductionItem()
         sel = Selector(response)
-        products = sel.xpath('//div[@class="product-layout  has-extra-button"]')
-        print("Product len", len(products))
 
-        # for product in products:
-        for i, product in enumerate(products):
-            # print(i)
-            # if i != 0:
-            #     continue
-            item = ProductItem()
-            item['title'] = product.xpath('.//div/div[2]/div[1]/a//text()').extract_first()
-            detail_url = product.xpath('.//div/div[2]/div[1]/a//@href').extract_first()
-            item['url'] = detail_url
-            # item['description'] = product.xpath('.//div/div[2]/div[2]//text()').extract_first()
-            # item['price'] = product.xpath('.//div/div[2]/div[3]/span//text()').extract_first()
-            req = Request(url=detail_url, callback=self.parse_detail, cb_kwargs={
-                'product': item
-            })
-            yield req
+        product['source_item_id'] = col['source_item_id']
+        product['status'] = 'DONE'
+        product['gmt_modified'] = datetime.now()
 
-    def parse_detail(self, response, **kwargs):
-        product = kwargs['product']
-        sel = Selector(response)
-        item_detail = sel.xpath('//div[contains(@class,"block-content expand-content")]')
-
-        product['sku'] = sel.xpath(
+        product['item_name'] = sel.xpath('//*[@id="product"]/div[1]//text()').extract_first()
+        product['item_sku'] = sel.xpath(
             ' // *[ @ id = "product"] / div[3] / div[2] / ul / li[2]/span//text()').extract_first()
-        product['price'] = sel.xpath('//*[@id="product"]/div[3]/div[1]/div[1]/div//text()').extract_first().replace('$', '')
+        product['standard_price'] = sel.xpath(
+            '//*[@id="product"]/div[3]/div[1]/div[1]/div//text()').extract_first().replace('$', '')
         img_list = sel.xpath('//div[contains(@class,"block-content expand-content")]//img')
         print("img_list size", len(img_list))
-        imgs = []
-        for img in img_list:
-            imgs.append("www.cyberebee.com/" + img.xpath('./@src').extract_first())
-        product['image'] = imgs
+        for i, img in enumerate(img_list):
+            if i >= 8:
+                continue
+            img_url = "www.cyberebee.com/" + img.xpath('./@src').extract_first()
+            img_field = 'other_image_url' + str(i + 1)
+            product[img_field] = img_url
 
         others_el = {'Package included:', 'Details pictures:', 'Package Included:',
                      'Specification:', 'Description:', 'Features:', 'More Details:'}
@@ -140,6 +140,6 @@ class Cyberebee2Spider(scrapy.Spider):
             for d in pkg:
                 description += d + "<br>"
 
-        product['description'] = description
+        product['product_description'] = description
 
-        yield product
+        return product

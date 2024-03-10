@@ -9,3 +9,4 @@ gen
 
 mySpider/spiders/__pycache__
 mySpider/taobao/__pycache__
+/venv/
