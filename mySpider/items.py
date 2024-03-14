@@ -66,6 +66,7 @@ class ProductionItem(Item):
     status = Field()
     #############通用字段###################
     feed_product_type = Field()
+    # 商品sku
     item_sku = Field()
     # IKEN
     brand_name = Field()
@@ -76,6 +77,7 @@ class ProductionItem(Item):
     # IKEN
     manufacturer = Field()
     item_type = Field()
+    #价格
     standard_price = Field()
     quantity = Field()
     main_image_url = Field()
