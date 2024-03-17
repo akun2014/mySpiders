@@ -38,13 +38,13 @@ class PeopleSchema(Schema):
 
 
 def get_db():
-    client = MongoClient("mongodb://localhost:27017/")
+    client = MongoClient("mongodb://192.168.3.22:27017")
     db = client["test"]
     return db
 
 
 def get_collection(db_name, collection):
-    client = MongoClient("mongodb://localhost:27017/")
+    client = MongoClient("mongodb://192.168.3.22:27017")
     db = client[db_name]
     col = db[collection]
     return col
