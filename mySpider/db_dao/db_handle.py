@@ -1,6 +1,5 @@
 import base64
 import random
-import string
 from datetime import datetime
 
 from bson import ObjectId
@@ -58,6 +57,25 @@ def is_exist(source_item_id):
         return True
     else:
         return False
+
+
+def is_production_exist(source_item_id):
+    coll = get_collection('demo', 'production_list')
+    result_item = coll.find_one({"source_item_id": source_item_id})
+    if result_item:
+        return True
+    else:
+        return False
+
+
+def is_categories_exist(url_hash):
+    coll = get_collection('demo', 'categories')
+    result_url_hash = coll.find_one({"source_item_url_hash": url_hash})
+    if result_url_hash:
+        return True
+    else:
+        return False
+
 
 def main():
     # 获取或创建名为 "my_collection" 的集合

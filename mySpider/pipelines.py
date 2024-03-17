@@ -13,7 +13,7 @@ import pymysql
 from scrapy.exceptions import DropItem
 
 from mySpider.db_dao.db_handle import get_collection
-from mySpider.items import ProductionItem, CategoriesItem
+from mySpider.items import ProductionItem, CategoriesItem, ProductionListItem
 
 
 class MyspiderPipeline:
@@ -55,6 +55,8 @@ class MyspiderPipeline:
                 else:
                     col.insert_one(dict(item))
         if isinstance(item, CategoriesItem):
+            col.insert_one(dict(item))
+        if isinstance(item, ProductionListItem):
             col.insert_one(dict(item))
         logging.info("hello workd")
         return item

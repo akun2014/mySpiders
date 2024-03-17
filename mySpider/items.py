@@ -47,8 +47,26 @@ class ProductItem(Item):
 class CategoriesItem(Item):
     # collection = 'categories'
     collection = Field()
-    url = Field()
-    type = Field()
+    source_url = Field()
+    source_type = Field()
+    source_item_url_hash = Field()
+    gmt_create = Field()
+    gmt_modified = Field()
+    status = Field()
+
+
+class ProductionListItem(Item):
+    # collection = 'categories'
+    collection = Field()
+    source_type = Field()
+    source_item_type = Field()
+    source_item_id = Field()
+    source_item_url = Field()
+    source_item_name = Field()
+    source_item_url_hash = Field()
+    gmt_create = Field()
+    gmt_modified = Field()
+    status = Field()
 
 
 class ProductionItem(Item):

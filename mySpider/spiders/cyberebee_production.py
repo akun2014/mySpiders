@@ -64,16 +64,20 @@ def get_features(elms, title, others):
 
 
 class Cyberebee2Spider(scrapy.Spider):
-    name = "cyberebee2"
+    """
+    抓取产品明细
+    """
+    name = "cyberebee_production"
     allowed_domains = ["www.cyberebee.com"]
 
     # start_urls = ['https://www.cyberebee.com/Tools-Excipients/Hand-Tool?limit=50']
 
     def start_requests(self):
-        col = get_collection('demo', 'cyberebee')
-        cols = col.find({'status': 'NEW'})
-        for col in cols:
-            print("col=", col)
+        col = get_collection('demo', 'production_list')
+        cols = col.find()
+        for i, col in enumerate(cols):
+            # if i > 5:
+            #     break
             yield Request(url=col['source_item_url'], callback=self.parse, cb_kwargs={'col': col})
 
     def parse(self, response: Response, **kwargs: Any):
@@ -83,6 +87,7 @@ class Cyberebee2Spider(scrapy.Spider):
 
         product['source_item_id'] = col['source_item_id']
         product['status'] = 'DONE'
+        product['collection'] = 'cyberebee'
         product['gmt_modified'] = datetime.now()
 
         product['item_name'] = sel.xpath('//*[@id="product"]/div[1]//text()').extract_first()

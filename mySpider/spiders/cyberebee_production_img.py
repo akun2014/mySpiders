@@ -13,7 +13,7 @@ class CyberebeeImgSpider(scrapy.Spider):
     """
     抓取图片
     """
-    name = "cyberebee_img"
+    name = "cyberebee_production_img"
     allowed_domains = ["www.cyberebee.com"]
 
     # start_urls = ['https://www.cyberebee.com/Tools-Excipients/Hand-Tool?limit=50']
@@ -34,7 +34,7 @@ class CyberebeeImgSpider(scrapy.Spider):
 
         product['source_item_id'] = col['source_item_id']
         product['gmt_modified'] = datetime.now()
-        product['collection'] = 'spider1'
+        product['collection'] = 'cyberebee'
 
         img_list = sel.xpath('//div[contains(@class,"block-content expand-content")]//img')
         # print("img_list size", len(img_list))
