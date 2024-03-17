@@ -19,7 +19,7 @@ from mySpider.items import ProductionItem, CategoriesItem
 class MyspiderPipeline:
 
     def __init__(self):
-        myclient = pymongo.MongoClient("mongodb://localhost:27017")
+        myclient = pymongo.MongoClient("mongodb://192.168.3.22:27017")
         self.mydb = myclient["demo"]
         # self.collection = self.mydb["cyberebee"]
         self.item_list = []
