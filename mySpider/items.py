@@ -45,7 +45,8 @@ class ProductItem(Item):
 
 
 class CategoriesItem(Item):
-    collection = 'categories'
+    # collection = 'categories'
+    collection = Field()
     url = Field()
     type = Field()
 

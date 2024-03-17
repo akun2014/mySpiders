@@ -17,5 +17,6 @@ class CyberebeeCategoriesSpider(scrapy.Spider):
             item = CategoriesItem()
             url = a.xpath("@href").extract_first()
             item['url'] = url
+            item['collection'] = 'categories'
             url_arr.append(item)
         return url_arr
