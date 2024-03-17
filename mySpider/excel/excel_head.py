@@ -17,7 +17,7 @@ ws = wb["Template"]
 header = []
 
 for row in ws.iter_rows(min_row=3, max_col=ws.max_column, max_row=3):
-    for index, cell in enumerate(row):
+    for index, cell in enumerate(row, start=1):
         head = Header()
         head.column_name = cell.value
         head.idx = index
@@ -29,5 +29,5 @@ json_string = Header().dumps(header, many=True)
 print(json_string)
 
 # 写入文件
-f = open("../bizdata/metadata.json")
-f.write(json_string)
+with open('../bizdata/metadata.json', 'w') as f:
+    f.write(json_string)

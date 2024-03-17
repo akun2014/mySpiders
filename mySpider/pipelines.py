@@ -30,21 +30,23 @@ class MyspiderPipeline:
     def close_spider(self, spider):
         # self.mydb.drop_collection("cyberebee")
         # self.mydb.create_collection("cyberebee")
-        self.collection = self.mydb["cyberebee"]
+
         if self.item_list:
+            item = self.item_list[0]
+            collection = self.mydb[item['collection']]
             print("item_list=====", self.item_list)
-            self.collection.insert_many(self.item_list)
+            collection.insert_many(self.item_list)
 
     def process_item(self, item, spider):
         print("process_item=====", type(item))
 
-        col = get_collection('demo', item.collection)
+        col = get_collection('demo', item['collection'])
         if isinstance(item, ProductionItem):
             print("process_item2=====", item)
             if not item:
                 raise DropItem("Missing data!")
             if item:
-                result = col.find_one({'status': 'NEW', 'source_item_id': item['source_item_id']})
+                result = col.find_one({'source_item_id': item['source_item_id']})
                 if result:
                     # 更新MongoDB数据
                     print("更新MongoDB数据2")

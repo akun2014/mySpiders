@@ -1,9 +1,9 @@
-others_el = {'Package included:', 'Details pictures:', 'Package Included:',
+others_el = {'Package included:', 'Details pictures:', 'Package Included:', 'Package Includes:',
              'Specification:', 'Description:', 'Features:', 'More Details:', 'Package Include:'}
 
 
 def handle_feature(str):
-    # print(str)
+    # print("features=", str)
     bullet_points = {}
     lines = str.splitlines(True)
     for index, line in enumerate(lines):
@@ -34,7 +34,7 @@ def handle_bullet_points(bullet_points):
     for index, vale in enumerate(bullet_points):
         num = vale[0]
         # print("num=", num, "vale=", vale)
-        if num.isdigit():
+        if num.isdigit() or vale.startswith('-'):
             # print("append")
             points.append(vale)
         else:

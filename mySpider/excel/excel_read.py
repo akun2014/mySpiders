@@ -8,6 +8,9 @@ with open("../bizdata/metadata.json", 'r') as meta_data:
 
 
 def get_head_idx(head_name):
+    if head_name not in head_map:
+        # print("Key " + head_name + " does not exist.")
+        return None
     return head_map[head_name]
 
 

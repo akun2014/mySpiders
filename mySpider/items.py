@@ -51,11 +51,13 @@ class CategoriesItem(Item):
 
 
 class ProductionItem(Item):
-    collection = 'cyberebee'
+    # 数据集
+    collection = Field()
     #############通用字段###################
     target = 'YMX'
     # 商品来源
     source_type = Field()
+    source_item_type = Field()
     source_item_id = Field()
     source_item_url = Field()
     source_item_sku = Field()
@@ -77,7 +79,7 @@ class ProductionItem(Item):
     # IKEN
     manufacturer = Field()
     item_type = Field()
-    #价格
+    # 价格
     standard_price = Field()
     quantity = Field()
     main_image_url = Field()
