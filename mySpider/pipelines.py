@@ -41,23 +41,18 @@ class MyspiderPipeline:
         print("process_item=====", type(item))
 
         col = get_collection('demo', item['collection'])
-        if isinstance(item, ProductionItem):
-            print("process_item2=====", item)
-            if not item:
-                raise DropItem("Missing data!")
-            if item:
-                result = col.find_one({'source_item_id': item['source_item_id']})
-                if result:
-                    # 更新MongoDB数据
-                    print("更新MongoDB数据2")
-                    col.update_one({'source_item_id': item['source_item_id']},
-                                   {'$set': dict(item)})
-                else:
-                    col.insert_one(dict(item))
-        if isinstance(item, CategoriesItem):
-            col.insert_one(dict(item))
-        if isinstance(item, ProductionListItem):
-            col.insert_one(dict(item))
+        print("process_item2=====", item)
+        if not item:
+            raise DropItem("Missing data!")
+        if item:
+            result = col.find_one({'source_item_id': item['source_item_id']})
+            if result:
+                # 更新MongoDB数据
+                print("更新MongoDB数据2")
+                col.update_one({'source_item_id': item['source_item_id']},
+                               {'$set': dict(item)})
+            else:
+                col.insert_one(dict(item))
         logging.info("hello workd")
         return item
 

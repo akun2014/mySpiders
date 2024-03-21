@@ -29,6 +29,7 @@ class CyberebeeCategoriesSpider(scrapy.Spider):
             item = CategoriesItem()
             item['source_url'] = url
             item['collection'] = 'categories'
+            item['source_type'] = 'cyberebee'
             item['source_item_url_hash'] = url_hash
             item['gmt_create'] = datetime.now()
             url_arr.append(item)
